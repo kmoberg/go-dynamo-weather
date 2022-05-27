@@ -4,10 +4,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/service/dynamodb"
-	"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute"
 	"log"
 	"net/http"
 	"time"
@@ -27,7 +23,7 @@ type Weather struct {
 
 func main() {
 
-	// Initialize a session that the SDK will use to load
+	/*// Initialize a session that the SDK will use to load
 	// credentials from the shared credentials file ~/.aws/credentials
 	// and region from the shared configuration file ~/.aws/config.
 	sess := session.Must(session.NewSessionWithOptions(session.Options{
@@ -63,7 +59,9 @@ func main() {
 		log.Fatalf("failed to DynamoDB put item, %v", err)
 	}
 
-	fmt.Println("Successfully added '" + string(rune(weather.Id)) + "' to DynamoDB table '" + tableName + "'")
+	fmt.Println("Successfully added '" + string(rune(weather.Id)) + "' to DynamoDB table '" + tableName + "'")*/
+
+	var err error
 
 	time.Local, err = time.LoadLocation("Europe/Oslo")
 	if err != nil {
