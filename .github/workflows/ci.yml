@@ -26,7 +26,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-go-
 
-      - run: make fmt
+      - run: gofmt -s -d .
 
   Test:
     runs-on: ubuntu-latest
