@@ -23,8 +23,8 @@ jobs:
         with:
           path: ~/go/pkg/mod
           key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
-          restore-keys:
-            - ${{ runner.os }}-go-
+          restore-keys: |
+            ${{ runner.os }}-go-
 
       - run: make fmt
 
@@ -61,15 +61,15 @@ jobs:
         with:
           path: ~/go/pkg/mod
           key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
-          restore-keys:
-            - ${{ runner.os }}-go-
+          restore-keys: |
+            ${{ runner.os }}-go-
 
       - uses: actions/cache@v3
         with:
           path: ~/go/bin
           key: ${{ runner.os }}-go-bin-${{ hashFiles('**/go.sum') }}
-          restore-keys:
-            - ${{ runner.os }}-go-build-
+          restore-keys: |
+            ${{ runner.os }}-go-build-
 
 #  Coverage:
 #    runs-on: ubuntu-latest
