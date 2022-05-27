@@ -7,16 +7,6 @@ on:
   pull_request: {}
 
 jobs:
-  AppArmor:
-    runs-on: ubuntu-latest
-    steps:
-      - apparmor
-        run: |
-          set -x
-          sudo apt-get remove mysql-server --purge
-          sudo apt-get install apparmor-profiles
-          sudo apparmor_parser -r /etc/apparmor.d/usr.sbin.mysqld
-
   Formatting:
     runs-on: ubuntu-latest
     steps:
